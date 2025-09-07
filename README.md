@@ -1,73 +1,175 @@
-# Welcome to your Lovable project
+# HealthScope AI
 
-## Project info
+**Health Risk Assessment Using AI - Complete Health Management Platform**
 
-**URL**: https://lovable.dev/projects/e35b1e66-aa97-44f9-a682-2642f1cac09b
+A comprehensive health management application built with React, TypeScript, and Supabase, featuring AI-powered health analysis, family health tracking, and nutrition management.
 
-## How can I edit this code?
+## 🚀 Features
 
-There are several ways of editing your application.
+### Core Health Management
+- **Family Health Dashboard** - Track health data for multiple family members
+- **Health Report Analysis** - AI-powered analysis of uploaded health reports
+- **Risk Assessment** - Comprehensive health risk evaluation
+- **Nutrition Tracking** - Barcode scanning and food analysis
+- **AI Chat Support** - Personalized health advice and guidance
 
-**Use Lovable**
+### Technical Features
+- **Modern UI/UX** - Built with shadcn/ui and Tailwind CSS
+- **Real-time Data** - Supabase real-time database integration
+- **AI Integration** - OpenAI GPT-4 for health analysis and chat
+- **Barcode Scanning** - Nutrition data lookup via barcode
+- **Responsive Design** - Mobile-first approach
+- **Secure Authentication** - Supabase Auth with RLS policies
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e35b1e66-aa97-44f9-a682-2642f1cac09b) and start prompting.
+## 🛠️ Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend**: React 18, TypeScript, Vite
+- **UI Components**: shadcn/ui, Tailwind CSS
+- **Backend**: Supabase (PostgreSQL, Auth, Edge Functions)
+- **AI Services**: OpenAI GPT-4, Nutritionix API
+- **State Management**: React Context API
+- **Routing**: React Router DOM
 
-**Use your preferred IDE**
+## 📦 Installation & Setup
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+- Supabase account
+- OpenAI API key
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Local Development
 
-Follow these steps:
+```bash
+# Clone the repository
+git clone https://github.com/ParamPrakash22/Health-Scope-Ai-.git
+cd Health-Scope-Ai-
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Install dependencies
+npm install
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Set up environment variables
+cp .env.example .env.local
+# Edit .env.local with your Supabase and OpenAI credentials
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Supabase Setup
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1. **Create a new Supabase project**
+2. **Run the database migration**:
+   ```sql
+   -- Copy and run the content from migration-complete-schema.sql
+   ```
+3. **Deploy Edge Functions**:
+   - `chat` - AI chat functionality
+   - `analyze-food` - Food nutrition analysis
+   - `analyze-health-report` - Health report analysis
+4. **Set environment variables** in Supabase:
+   - `OPENAI_API_KEY` - Your OpenAI API key
+   - `SUPABASE_URL` - Your Supabase project URL
+   - `SUPABASE_ANON_KEY` - Your Supabase anon key
 
-**Use GitHub Codespaces**
+## 🏗️ Project Structure
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```
+src/
+├── components/          # Reusable UI components
+│   ├── ui/             # shadcn/ui components
+│   ├── BarcodeScanner.tsx
+│   ├── ChatBot.tsx
+│   └── ...
+├── pages/              # Application pages
+│   ├── Dashboard.tsx
+│   ├── FamilyDashboard.tsx
+│   ├── Reports.tsx
+│   └── ...
+├── contexts/           # React contexts
+│   ├── AuthContext.tsx
+│   └── HealthContext.tsx
+├── integrations/       # External service integrations
+│   └── supabase/
+└── lib/               # Utility functions
 
-## What technologies are used for this project?
+supabase/
+├── functions/         # Edge Functions
+│   ├── chat/
+│   ├── analyze-food/
+│   └── analyze-health-report/
+├── migrations/        # Database migrations
+└── config.toml       # Supabase configuration
+```
 
-This project is built with:
+## 🔧 Configuration
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Environment Variables
 
-## How can I deploy this project?
+Create a `.env.local` file:
 
-Simply open [Lovable](https://lovable.dev/projects/e35b1e66-aa97-44f9-a682-2642f1cac09b) and click on Share -> Publish.
+```env
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
 
-## Can I connect a custom domain to my Lovable project?
+### Supabase Edge Functions
 
-Yes, you can!
+The application uses three Edge Functions:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+1. **Chat Function** - Handles AI chat interactions
+2. **Analyze Food Function** - Processes nutrition data
+3. **Analyze Health Report Function** - Analyzes health reports
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+1. Connect your GitHub repository to Vercel
+2. Set environment variables in Vercel dashboard
+3. Deploy automatically on push to main branch
+
+### Other Platforms
+
+The app can be deployed to any platform that supports React applications:
+- Netlify
+- GitHub Pages
+- AWS Amplify
+- Railway
+
+## 📱 Usage
+
+1. **Sign Up/Login** - Create an account or sign in
+2. **Add Family Members** - Set up profiles for family members
+3. **Upload Health Reports** - Upload and analyze health documents
+4. **Track Nutrition** - Scan barcodes or manually enter food data
+5. **Get AI Insights** - Chat with AI for health advice
+6. **Monitor Progress** - View analytics and health trends
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [Supabase](https://supabase.com/) for backend infrastructure
+- [OpenAI](https://openai.com/) for AI capabilities
+- [Nutritionix](https://www.nutritionix.com/) for nutrition data
+- [shadcn/ui](https://ui.shadcn.com/) for UI components
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+
+## 📞 Support
+
+For support, email your-email@example.com or create an issue in this repository.
+
+---
+
+**Built with ❤️ for better health management**

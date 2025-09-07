@@ -1,0 +1,154 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 100% 95%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 256 75% 54%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 256 100% 96%;
+    --secondary-foreground: 256 75% 54%;
+
+    --muted: 210 100% 95%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 324 85% 72%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 256 100% 96%;
+    --input: 0 0% 100%;
+    --ring: 256 75% 54%;
+
+    --radius: 1rem;
+
+    /* Custom theme colors */
+    --primary-violet: 256 75% 54%;
+    --secondary-blue: 210 100% 95%;
+    --accent-pink: 324 85% 72%;
+    --accent-orange: 23 100% 62%;
+    --nav-background: 256 100% 96%;
+  }
+
+  .dark {
+    --background: 256 75% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 256 75% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 256 75% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 256 75% 54%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 256 75% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 256 75% 12%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 324 85% 72%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 256 75% 12%;
+    --input: 256 75% 12%;
+    --ring: 256 75% 54%;
+
+    /* Custom theme colors for dark mode */
+    --primary-violet: 256 75% 54%;
+    --secondary-blue: 256 75% 8%;
+    --accent-pink: 324 85% 72%;
+    --accent-orange: 23 100% 62%;
+    --nav-background: 256 75% 12%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .App {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Ensure full-width responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+    width: 100%;
+  }
+  
+  body {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+/* Page layout utilities for full responsiveness */
+.page-layout {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 100px; /* Space for bottom navigation */
+}
+
+.page-container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-container {
+    max-width: 1400px;
+    padding: 2rem 3rem;
+  }
+}

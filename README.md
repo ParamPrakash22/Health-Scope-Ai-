@@ -38,23 +38,6 @@ A comprehensive health management application built with React, TypeScript, and 
 - Supabase account
 - OpenAI API key
 
-### Local Development
-
-```bash
-# Clone the repository
-git clone https://github.com/ParamPrakash22/Health-Scope-Ai-.git
-cd Health-Scope-Ai-
-
-# Install dependencies
-npm install
-
-# Set up environment variables
-cp .env.example .env.local
-# Edit .env.local with your Supabase and OpenAI credentials
-
-# Start development server
-npm run dev
-```
 
 ### Supabase Setup
 
@@ -154,9 +137,6 @@ The app can be deployed to any platform that supports React applications:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
@@ -166,9 +146,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [shadcn/ui](https://ui.shadcn.com/) for UI components
 - [Tailwind CSS](https://tailwindcss.com/) for styling
 
-## 📞 Support
-
-For support, email your-email@example.com or create an issue in this repository.
 
 ---
 
